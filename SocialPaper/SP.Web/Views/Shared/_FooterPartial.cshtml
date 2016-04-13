@@ -1,0 +1,68 @@
+﻿<div class="row">
+    <section class="onecol">
+        <ul>
+            <li>
+                <h3>Contacter nous</h3>
+                <ul>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { sitename = (string)null}, null)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="twocol">
+        <ul>
+            <li>
+                <h3>Suivre One Social</h3>
+                <ul>
+                    <li>
+                        <a href="" target="_blank" >Sur Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">Sur Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">Sur Google+</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="threecol">
+        <ul>
+            <li>
+                <ul>
+                    <li>
+                        @Html.FbLikeButton("")
+                    </li>
+                    <li>
+                        @Html.TweetButton()
+                    </li>
+                    <li>
+                        @Html.GooglePlusButton()
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="fourcol">
+        <ul>
+            <li>
+                <h3>Sites favoris</h3>
+                <ul>
+                    <li><a href="http://www.slashwars.com" target="_blank">Slash Wars</a></li>
+                    <li>
+                        <a href="http://www.biztowell.com/" target="_blank">Biztowell</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yokoro.fr/" target="_blank">Yokoro</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<section class="logo">
+    <div style="font-size: 12px; margin-top: -10px;">&copy; @DateTime.Now.Year - One Social. All Rights Reserved. Website by <a href=""
+        title="Harbi Wael Personal Web Site">Wael Harbi</a></div>
+</section>

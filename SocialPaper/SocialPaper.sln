@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WH.MVC.Tools", "WH.MVC.Tools\WH.MVC.Tools.csproj", "{26F249D5-01CD-4615-BAE2-9AA05066299F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Model", "SP.Model\SP.Model.csproj", "{C42CD988-89AB-474C-9EF0-031066B72216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Web.Context", "SP.Web.Context\SP.Web.Context.csproj", "{195A20C4-4423-4E03-AD61-396E806E6F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Web", "SP.Web\SP.Web.csproj", "{2A798DFB-04F3-4E7B-ADBE-32500B6DDC14}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://wharbi.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WH.MVC.Tools\\WH.MVC.Tools.csproj
+		SccProjectName1 = WH.MVC.Tools
+		SccLocalPath1 = WH.MVC.Tools
+		SccProjectUniqueName2 = SP.Model\\SP.Model.csproj
+		SccProjectName2 = SP.Model
+		SccLocalPath2 = SP.Model
+		SccProjectUniqueName3 = SP.Web.Context\\SP.Web.Context.csproj
+		SccProjectName3 = SP.Web.Context
+		SccLocalPath3 = SP.Web.Context
+		SccProjectUniqueName4 = SP.Web\\SP.Web.csproj
+		SccProjectName4 = SP.Web
+		SccLocalPath4 = SP.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26F249D5-01CD-4615-BAE2-9AA05066299F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F249D5-01CD-4615-BAE2-9AA05066299F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F249D5-01CD-4615-BAE2-9AA05066299F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F249D5-01CD-4615-BAE2-9AA05066299F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42CD988-89AB-474C-9EF0-031066B72216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42CD988-89AB-474C-9EF0-031066B72216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42CD988-89AB-474C-9EF0-031066B72216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42CD988-89AB-474C-9EF0-031066B72216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195A20C4-4423-4E03-AD61-396E806E6F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195A20C4-4423-4E03-AD61-396E806E6F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195A20C4-4423-4E03-AD61-396E806E6F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195A20C4-4423-4E03-AD61-396E806E6F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A798DFB-04F3-4E7B-ADBE-32500B6DDC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A798DFB-04F3-4E7B-ADBE-32500B6DDC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A798DFB-04F3-4E7B-ADBE-32500B6DDC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A798DFB-04F3-4E7B-ADBE-32500B6DDC14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

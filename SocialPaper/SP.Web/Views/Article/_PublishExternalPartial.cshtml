@@ -1,0 +1,26 @@
+﻿@model ICollection<SP.Web.Models.ExternalLogin>
+
+@if (Model.Count > 0)
+{
+    <table>
+        <tbody>
+            <tr>
+                @foreach (SP.Web.Models.ExternalLogin externalLogin in Model)
+                {
+                    <td>
+                        @using (Html.BeginForm("Publish", "Article"))
+                        {
+                            @Html.AntiForgeryToken()
+                            <fieldset>
+                                @Html.Hidden("articleId", Request.Params["id"])
+                                @Html.Hidden("provider", externalLogin.Provider)
+                                @Html.Hidden("providerUserId", externalLogin.ProviderUserId)
+                                <input type="submit" value="Publier sur @externalLogin.ProviderDisplayName." title="Publier cet article sur votre compte @externalLogin.ProviderDisplayName." />
+                            </fieldset>
+                        }
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+}

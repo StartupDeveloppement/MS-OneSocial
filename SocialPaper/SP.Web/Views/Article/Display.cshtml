@@ -1,0 +1,14 @@
+﻿@model SP.Web.Models.ArticleContent
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/article")
+}
+
+@Html.Partial("_DisplayArticlePartial", Model)
+
+<div style="float:left">
+    @Html.FbLikeButton(Request.Url.ToString())
+</div>
+@Html.TweetButton()
+@Html.GooglePlusButton()
+@Html.FbComments(Request.Url.ToString(), false)

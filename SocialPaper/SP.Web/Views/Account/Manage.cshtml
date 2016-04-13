@@ -1,0 +1,48 @@
+﻿@model SP.Web.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Gestion de compte";
+}
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>@ViewBag.Title.</h1>
+            <h2>Modifier votre compte pour le garder à jour.</h2>
+        </div>
+    </div>
+}
+<div class="formulaire">
+    <p class="message-success">@ViewBag.StatusMessage</p>
+
+    <p>Vous êtes connecté en tant que <strong>@SP.Web.Context.UsersContext.GetUserName(User.Identity.Name)</strong>.</p>
+
+    <div class="bloc formulaire-connexion">
+        <table>
+            <tr>
+                <td valign="top">
+                    <section id="loginForm">
+                        @if (ViewBag.HasLocalPassword)
+                        {
+                            @Html.Partial("_ChangePasswordPartial")
+                        }
+                        else
+                        { 
+                            @Html.Partial("_SetPasswordPartial")
+                        }
+                    </section>
+                </td>
+                <td valign="top">
+                    <section id="externalLogins">
+                        @Html.Action("RemoveExternalLogins")
+
+                        <h3>Associer un nouveau compte</h3>
+                        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+                    </section>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

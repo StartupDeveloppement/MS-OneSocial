@@ -1,0 +1,21 @@
+﻿<div class="right-nav">
+    <div class="auth">
+        @if (Request.IsAuthenticated) {
+    
+            SP.Model.UserProfile userProfile = SP.Web.Context.UsersContext.GetUserByEmail(User.Identity.Name);
+
+            <text>
+                @Html.ActionLink(userProfile.UserName, "Manage", "Account", routeValues: new { sitename = (string)null }, htmlAttributes: new { @class = "username", title = "Manage" })
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Déconnexion</a>
+                }
+            </text>  
+        } else {
+            @Html.ActionLink("Inscription", "Register", "Account", routeValues: new { sitename = (string)null }, htmlAttributes: new { id = "registerLink" })
+            @Html.Raw(" | ") 
+            @Html.ActionLink("Connexion", "Login", "Account", routeValues: new { sitename = (string)null }, htmlAttributes: new { id = "loginLink" })
+        }
+    </div>
+</div>

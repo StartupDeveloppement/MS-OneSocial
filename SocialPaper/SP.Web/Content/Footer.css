@@ -1,0 +1,90 @@
+﻿
+
+footer .row {
+    margin: 0 auto;
+    min-width: 980px;
+    overflow: hidden;
+    width: 50%;
+}
+
+.onecol, .twocol, .threecol, .fourcol {
+    float: left;
+    min-height: 1px;
+    max-width: 450px;
+}
+
+.last {
+    margin-right: 0;
+}
+.onecol {
+    min-width:160px;
+}
+
+footer .ms-nav ul {
+    clear: both;
+    float: right;
+    min-height: 20px;
+    min-width: 535px;
+}
+footer .ms-nav ul {
+    margin-top: 5px;
+}
+footer ul {
+    padding-left: 0;
+}
+
+footer .logo {
+    margin-bottom: 20px;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: -50px;
+}
+
+
+footer ul li ul li img {
+    margin-right: 10px;
+    max-width: 20px;
+}
+
+footer ul li ul {
+    display: block;
+    margin-left:10px;
+}
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li ul li {
+    display: block;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+footer .social-linked-icon {
+    float: left;
+    margin: 2px 0 0 22px;
+}
+footer .social-linked-icon {
+    margin-top: 10px;
+}
+
+
+footer a {
+    color: #000000 !important;
+    font-size: 12px;
+}
+
+
+footer .ms-nav ul li {
+    float: left;
+    margin: 0 0 0 30px;
+}
+footer .ms-nav ul li {
+    color: #000000;
+    font-size: 11px;
+}
+footer li {
+    margin-right: 30px;
+    list-style: none outside none;
+}
+

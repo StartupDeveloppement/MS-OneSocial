@@ -1,0 +1,67 @@
+﻿@model SP.Web.Models.ArticleEditLink
+@{
+    ViewBag.Title = "Modifier l'article associé";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>Modifier votre article.</h1>
+            <h2>Il vous suffit de renseigner les informations du formulaire.</h2>
+            <p>
+                L'association d'un article existant sur un autre site vous permet de bénéficier des outils de publication de One Social.
+            </p>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="large-editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category)
+        </div>
+        <div class="large-editor-field">
+            @Html.EditorFor(model => model.Category)
+            @Html.ValidationMessageFor(model => model.Category)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Abstract)
+        </div>
+        <div class="large-editor-field">
+            @Html.TextAreaFor(model => model.Abstract, new { style = "width:100%; height:44px;" })
+            @Html.ValidationMessageFor(model => model.Abstract)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LinkUrl)
+        </div>
+        <div class="large-editor-field">
+            @Html.EditorFor(model => model.LinkUrl)
+            @Html.ValidationMessageFor(model => model.LinkUrl)
+            @Html.DescriptionFor(model => model.LinkUrl)
+        </div>
+
+        <p>
+            <input class="green-button" type="submit" name="submitButton" value="Enregistrer" />
+        </p>
+        
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

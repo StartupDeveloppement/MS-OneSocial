@@ -1,0 +1,86 @@
+﻿@model SP.Web.Models.ArticlePublish
+@{
+    ViewBag.Title = "Publier l'article";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/article")
+}
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>Publier votre article.</h1>
+            <h2>Cela vous permet de diffuser votre article sur la toile.</h2>
+            <p>
+                Vous pouvez également publier votre article sur les réseaux sociaux par un simple clic.
+            </p>
+        </div>
+    </div>
+}
+
+<div class="bloc formulaire-connexion">
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.isPublished)
+        <p>
+            <input class="green-button" type="submit" name="submitButton" value="Publier" />
+        </p>
+
+        <table>
+            @if (Model.isPublished)
+            {
+                <tr>
+                    <td>@Html.CheckBoxFor(model => model.Publish)</td>
+                    <td>@Html.LabelFor(model => model.Publish, new { style = "width:300px" })</td>
+                </tr>
+            }
+            @if (Model.isFacebook)
+            {
+                <tr>
+                    <td>@Html.CheckBoxFor(model => model.PublishOnFacebook)</td>
+                    <td>@Html.LabelFor(model => model.PublishOnFacebook, new { style = "width:300px" })
+                        @if (Model.isFbPublished)
+                        {
+                             <span>L'article a déjà été publié sur Facebook</span>
+                        }
+                    </td>
+                </tr>
+            }
+            @if (Model.isGoogle)
+            {
+                <tr>
+                    <td>@Html.CheckBoxFor(model => model.PublishOnGoogle)</td>
+                    <td>@Html.LabelFor(model => model.PublishOnGoogle, new { style = "width:300px" })
+                        @if (Model.isGooglePublished)
+                        {
+                             <span>L'article a déjà été publié sur Google+</span>
+                        }
+                    </td>
+                </tr>
+            }
+            @if (Model.isTwitter)
+            {
+                <tr>
+                    <td>@Html.CheckBoxFor(model => model.PublishOnTwitter)</td>
+                    <td>@Html.LabelFor(model => model.PublishOnTwitter, new { style = "width:300px" })
+                        @if (Model.isTwitterPublished)
+                        {
+                             <span>L'article a déjà été publié sur Twitter</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </fieldset>
+}
+</div>
+<br />
+<br clear="all" />
+@Html.Partial("_DisplayArticlePartial", Model.Content)
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

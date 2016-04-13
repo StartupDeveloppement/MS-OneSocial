@@ -1,0 +1,432 @@
+﻿
+body {
+    background-color: #F2F2F2;
+    color: #302E2F;
+    font-family: "Segoe UI",Tahoma,Helvetica,Arial,Verdana,sans-serif;
+    font-size: 0.85em;
+    margin: 0;
+}
+
+header.p2-header .default {
+    display: block;
+}
+
+header .default {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+nav.main {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.fc {
+    overflow: hidden;
+}
+
+    .fc li {
+        display: inline;
+    }
+
+
+.cf:before, .cf:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.cf:before, .cf:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.p2-nav-content-width, .p2-nav-content-width.fc, .p2-nav-content-width.fcv {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 80%;
+}
+
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+
+nav.main ul {
+    padding: 2px 0 14px;
+}
+ul.fc, ul.fcv {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul, nav ol {
+    list-style: none outside none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+menu, ol, ul {
+    padding: 0 0 0 30px;
+}
+.menu li {
+    padding: 0 0 5px;
+    list-style: square outside none;
+}
+dl, menu, ol, ul {
+    margin: 1em 0;
+}
+
+nav.main .logo {
+    font-size: 34pt;
+    left: 236px;
+    top: 0px;
+    position: absolute;
+}
+
+nav.main .logo a {
+    color: #000000;
+}
+
+.site-header {
+    float: left;
+    height: 74px;
+}
+
+a {
+    text-decoration: none;
+    outline: 0 none !important;
+    color: #00AEFF;
+}
+
+
+
+
+nav .right-nav {
+    text-align: right;
+}
+
+header.p2-header nav .auth {
+    margin-bottom: 18px;
+}
+nav.main .auth {
+    height: 17px;
+}
+nav .auth {
+    color: #AAAAAA;
+    font-size: 12px;
+    margin-bottom: 13px;
+    margin-top: 13px;
+}
+
+nav.sub.fc {
+    height: 40px;
+    overflow: visible;
+}
+nav.sub {
+    background-repeat: repeat;
+}
+nav.sub {
+    background: url("/Images/Surface/subnav-caret.png") no-repeat scroll left top transparent;
+    font-size: 0.85em;
+    position: relative;
+    z-index: 10;
+}
+
+
+ul.fc li, ul.fcv li {
+    margin: 0;
+    padding: 0;
+}
+
+nav.sub .nav-item a, nav.sub .nav-item a:visited {
+    color: #FFFFFF;
+    display: block;
+    line-height: 40px;
+    padding: 0 16px;
+}
+
+
+
+
+
+
+
+
+
+.p2-eb-theme-bg-white {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+}
+.p2-eb-theme-bg-blue {
+    background-color: #00AEEE;
+    color: #FFFFFF;
+    padding: 5px 0;
+}
+.p2-editorial-block .block-wrapper {
+    position: relative;
+}
+.p2-content-width, .p2-content-width.fc, .p2-content-width.fcv {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+
+.p2-editorial-block.p2-eb-type-standard .block-content > h2, .p2-editorial-block.p2-eb-type-students-helpmechoose .block-content > h2 {
+    font-family: 'Segoe UI','SegoeUI';
+    font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin: 0.83em 0 0.2em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+.p2-eb-theme-bg-blue h1, .p2-eb-theme-bg-blue h2, .p2-eb-theme-bg-blue h3, .p2-eb-theme-bg-blue h4, .p2-eb-theme-bg-blue h5, .p2-eb-theme-bg-blue h6 {
+    font-weight: normal;
+    display: inline;
+}
+
+
+
+
+
+.block-content-container {
+    float: right;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 20%;
+}
+
+
+/* ordered list */
+ol.round {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+    ol.round li {
+        margin: 25px 0;
+        padding-left: 45px;
+    }
+
+        ol.round li.zero {
+            background: url("../Images/orderedList0.png") no-repeat;
+        }
+
+        ol.round li.one {
+            background: url("../Images/orderedList1.png") no-repeat;
+        }
+
+        ol.round li.two {
+            background: url("../Images/orderedList2.png") no-repeat;
+        }
+
+        ol.round li.three {
+            background: url("../Images/orderedList3.png") no-repeat;
+        }
+
+        ol.round li.four {
+            background: url("../Images/orderedList4.png") no-repeat;
+        }
+
+        ol.round li.five {
+            background: url("../Images/orderedList5.png") no-repeat;
+        }
+
+        ol.round li.six {
+            background: url("../Images/orderedList6.png") no-repeat;
+        }
+
+        ol.round li.seven {
+            background: url("../Images/orderedList7.png") no-repeat;
+        }
+
+        ol.round li.eight {
+            background: url("../Images/orderedList8.png") no-repeat;
+        }
+
+        ol.round li.nine {
+            background: url("../Images/orderedList9.png") no-repeat;
+        }
+
+.section-shadow {
+    height: 15px;
+    width: 100%;
+}
+
+#secondary {
+    border: 5px solid #EFEFEF;
+    float: right;
+    padding: 0 0 0 10px;
+    width: 290px;
+    margin-bottom: 10px;
+}
+
+li {
+    list-style: none outside none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bloc {
+    border-color: #E3E8EE #D9DDE3 #BEC2C7;
+    border-style: solid;
+    border-width: 1px 2px 2px 1px;
+}
+
+.formulaire {
+    width:980px;
+    margin:0 auto;
+}
+
+.formulaire-connexion {
+    padding: 20px 20px 20px 60px;
+}
+
+td {
+    border: 0 none;
+    padding: 0.25em 2em 0.25em 0;
+}
+
+
+#loginForm {
+    border-right: 2px solid #C8C8C8;
+    padding-right: 15px;
+}
+
+fieldset {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset ol {
+    list-style: none outside none;
+    padding: 0;
+}
+
+fieldset ol li {
+    padding-bottom: 5px;
+}
+
+
+label {
+    border: medium none;
+    float: left;
+    width: 130px;
+}
+
+#loginForm input {
+    width: 250px;
+}
+#loginForm input[type="checkbox"] {
+    margin: 13px 0;
+    width: 10px;
+}
+input, textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E2E2E2;
+    color: #333333;
+    margin: 0 0 10px;
+    padding: 4px;
+    width: 300px;
+}
+
+.green-button {
+    background: url("/Images/arrowwhite.png") no-repeat scroll 95% center #8DBB40;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 20px;
+    padding: 8px 0 5px;
+    width: 200px;
+}
+
+
+.social-button {
+    background-color: #108FBA;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 8px 0 5px;
+    width: 100px;
+}
+
+input.input-validation-error {
+    border: 1px solid #E80C4D;
+}
+
+
+.field-validation-error {
+    color: #E80C4D;
+    font-weight: bold;
+}
+
+.download-button {
+    background: #7B4F9D;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 8px 0 5px;
+    width: 240px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.edit {
+    margin-right: -50px;
+    margin-top:-40px;
+    float:right;
+}
+
+.edit ul li {
+     padding-left: 10px;
+     display:inline;
+}
+
+.large-editor-field input {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    background: none repeat scroll 0 0 transparent;
+    border: inherit;
+    width: auto;
+}
+
+.active a {
+    color:#00AEFF !important;
+    font-weight: bold !important;
+}
+
+.loadButton {
+    text-align: center;
+}

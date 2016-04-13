@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{195A20C4-4423-4E03-AD61-396E806E6F30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SP.Web.Context</RootNamespace>
+    <AssemblyName>SP.Web.Context</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArticlesContext.cs" />
+    <Compile Include="Migrations\201302272005093_AddSiteAndNameColumn.cs" />
+    <Compile Include="Migrations\201302272005093_AddSiteAndNameColumn.Designer.cs">
+      <DependentUpon>201302272005093_AddSiteAndNameColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303062211347_AddArticleClass.cs" />
+    <Compile Include="Migrations\201303062211347_AddArticleClass.Designer.cs">
+      <DependentUpon>201303062211347_AddArticleClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303082123180_AddCreationToArticle.cs" />
+    <Compile Include="Migrations\201303082123180_AddCreationToArticle.Designer.cs">
+      <DependentUpon>201303082123180_AddCreationToArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305051233224_AddUserAbout.cs" />
+    <Compile Include="Migrations\201305051233224_AddUserAbout.Designer.cs">
+      <DependentUpon>201305051233224_AddUserAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305092206553_AddVisitsColumn.cs" />
+    <Compile Include="Migrations\201305092206553_AddVisitsColumn.Designer.cs">
+      <DependentUpon>201305092206553_AddVisitsColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305112339581_AddVideoColumn.cs" />
+    <Compile Include="Migrations\201305112339581_AddVideoColumn.Designer.cs">
+      <DependentUpon>201305112339581_AddVideoColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305120014344_AddFilesColumns.cs" />
+    <Compile Include="Migrations\201305120014344_AddFilesColumns.Designer.cs">
+      <DependentUpon>201305120014344_AddFilesColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201305201312141_AddLinkToArtcile.cs" />
+    <Compile Include="Migrations\201305201312141_AddLinkToArtcile.Designer.cs">
+      <DependentUpon>201305201312141_AddLinkToArtcile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308261717553_AddPublicationDates.cs" />
+    <Compile Include="Migrations\201308261717553_AddPublicationDates.Designer.cs">
+      <DependentUpon>201308261717553_AddPublicationDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308292022084_AddCategoryToArticle.cs" />
+    <Compile Include="Migrations\201308292022084_AddCategoryToArticle.Designer.cs">
+      <DependentUpon>201308292022084_AddCategoryToArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SP.Model\SP.Model.csproj">
+      <Project>{c42cd988-89ab-474c-9ef0-031066b72216}</Project>
+      <Name>SP.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201302272005093_AddSiteAndNameColumn.resx">
+      <DependentUpon>201302272005093_AddSiteAndNameColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303062211347_AddArticleClass.resx">
+      <DependentUpon>201303062211347_AddArticleClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303082123180_AddCreationToArticle.resx">
+      <DependentUpon>201303082123180_AddCreationToArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305051233224_AddUserAbout.resx">
+      <DependentUpon>201305051233224_AddUserAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305092206553_AddVisitsColumn.resx">
+      <DependentUpon>201305092206553_AddVisitsColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305112339581_AddVideoColumn.resx">
+      <DependentUpon>201305112339581_AddVideoColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305120014344_AddFilesColumns.resx">
+      <DependentUpon>201305120014344_AddFilesColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201305201312141_AddLinkToArtcile.resx">
+      <DependentUpon>201305201312141_AddLinkToArtcile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308261717553_AddPublicationDates.resx">
+      <DependentUpon>201308261717553_AddPublicationDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308292022084_AddCategoryToArticle.resx">
+      <DependentUpon>201308292022084_AddCategoryToArticle.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

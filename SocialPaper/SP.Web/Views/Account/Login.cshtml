@@ -1,0 +1,62 @@
+﻿@model SP.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Connexion";
+}
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>@ViewBag.Title.</h1>
+            <h2>Utiliser votre compte personnel ou un autre service.</h2>
+            <p>
+                La connexion vous permet d'accéder à votre espace personnel pour gérer votre site et vos articles.
+            </p>
+        </div>
+    </div>
+}
+
+<div class="formulaire">
+    Pas encore inscrit ? @Html.ActionLink("Inscrivez-vous", "Register", new { sitename = (string)null }, null)
+    <br />
+    <br clear="all" />
+    <div class="bloc formulaire-connexion">
+        <table>
+            <tr>
+                <td valign="top">
+                    <section id="loginForm">
+                        <h3>Utiliser votre compte pour se connecter.</h3>
+                        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <fieldset>
+                                <ol>
+                                    <li>
+                                        @Html.LabelFor(m => m.Email)
+                                        @Html.TextBoxFor(m => m.Email)
+                                    </li>
+                                    <li>
+                                        @Html.LabelFor(m => m.Password)
+                                        @Html.PasswordFor(m => m.Password)
+                                    </li>
+                                    <li>
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                                    </li>
+                                </ol>
+                                <input class="green-button" type="submit" value="Connexion" />
+                            </fieldset>
+                        }
+                    </section>
+                </td>
+                <td valign="top">
+                    <h3>Utiliser un autre service pour se connecter.</h3>
+                    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "A Propos";
+}
+
+@{
+    if (ViewBag.CanEdit)
+    {
+        <div>
+            @Html.ActionLink("Modifier ma présentation", "Edit", "About")
+        </div>
+    }
+}
+@{
+    string imageUrl = ViewBag.ImageUrl as string;
+    if(!string.IsNullOrEmpty(imageUrl))
+    {
+        <div style="float: right; margin: 0 20px 0 0;">
+            @Html.Image(imageUrl, ViewBag.UserName as string, 160, 160)
+        </div>
+    }
+    if (ViewBag.CanEdit)
+    {
+        <div>
+            @using (Html.BeginForm("ImageUpload", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input name="UploadPicture" type="file" />
+                <input class="green-button" style="width:240px" type="submit" value="Télécharger votre image" />
+            }
+        </div>
+    }
+}
+<article>
+    <div>
+        @MvcHtmlString.Create(ViewBag.Presentation)
+    </div>
+@{
+    string cvUrl = ViewBag.CvUrl as string;
+    if (!string.IsNullOrEmpty(cvUrl))
+    {
+        @Html.ActionLink("Consulter mon CV", "CV", "About", new { sitename = ViewBag.SiteName as string }, null)
+    }
+
+    if (ViewBag.CanEdit)
+    {
+        <div>
+            @using (Html.BeginForm("CvUpload", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input name="UploadCv" type="file" />
+                <input class="green-button" style="width:240px" type="submit" value="Télécharger votre CV" />
+            }
+        </div>
+    }
+}
+</article>

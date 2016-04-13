@@ -1,0 +1,6 @@
+﻿Liste des fichiers qui ont été rajoutés spécifiquement pour Dynamic Data :
+- Admin
+- Dynamic Data
+- Site.css
+- Site.master
+- Modifications dans le fichier Global.asax

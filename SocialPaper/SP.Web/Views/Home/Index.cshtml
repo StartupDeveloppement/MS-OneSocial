@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Accueil";
+}
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40898710-1', 'azurewebsites.net');
+  ga('send', 'pageview');
+
+</script>
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>Votre journal connecté.</h1>
+            <h2>Vous permet de rédiger vos articles et de les publier sur les réseaux sociaux les plus importants.</h2>
+            <p>
+                Jamais la rédaction de vos articles n'a été plus simple. Les publier sur les réseaux sociaux dépendra juste d'un clic.
+            </p>
+        </div>
+    </div>
+}
+@section panel {
+    <div class="block-content-container">
+        <div id="secondary">
+            @Html.Action("PopularArticles")
+	        @Html.Action("LastArticles")
+        </div>
+    </div>
+}
+<h3>Pour ce faire il suffit juste de :</h3>
+<ol class="round">
+    <li class="one">
+        <h5>@Html.ActionLink("S'inscrire", "Register", "Account", new { sitename = (string)null }, null) gratuitement</h5>
+        <p>@Html.ActionLink("L'inscription", "Register", "Account", new { sitename = (string)null }, null) ne vous prendra que quelques secondes et elle est totalement gratuite.</p>
+        <p>L'utilisation de votre compte Facebook, Twitter, Google ou Microsoft facilitera encore plus l'utilisation des fonctionnalités du site.</p>
+        <p>L'inscription vous permet d'avoir votre propre site sur lequel vous pouvez héberger vos articles gratuitement et sans limite.</p>
+    </li>
+
+    <li class="two">
+        <h5>Rédiger et enregistrer vos articles</h5>
+        <p>Utiliser les outils du site pour rédiger et gérer facilement vos articles.</p>
+        <p>Vous pouvez également insérer du contenu multimédia dans vos articles.</p>
+        <p>Vos articles seront visible directement sur votre site pour être consulter par les internautes du monde entier.</p>
+    </li>
+
+    <li class="three">
+        <h5>Publier vos articles</h5>
+        <p>Par un simple clic vous pouvez publier vos articles sur les réseaux sociaux les plus importants au monde. Vous pouvez ainsi profiter des avantages des réseaux sociaux.</p>
+    </li>
+</ol>

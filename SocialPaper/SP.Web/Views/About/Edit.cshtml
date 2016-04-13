@@ -1,0 +1,59 @@
+﻿@model SP.Web.Models.AboutEdit
+
+@{
+    ViewBag.Title = "Modifier ma présentation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    tinymce.init({
+        selector: "textarea#Description",
+        theme: "modern",
+        plugins: [
+             "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+             "save table contextmenu directionality emoticons template paste textcolor"
+        ],
+        content_css: "css/content.css",
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+        style_formats: [
+             { title: 'Bold text', inline: 'b' },
+             { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
+             { title: 'Red header', block: 'h1', styles: { color: '#ff0000' } },
+             { title: 'Example 1', inline: 'span', classes: 'example1' },
+             { title: 'Example 2', inline: 'span', classes: 'example2' },
+             { title: 'Table styles' },
+             { title: 'Table row 1', selector: 'tr', classes: 'tablerow1' }
+        ]
+    });
+</script>
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>@ViewBag.Title</h1>
+            <h2>La présentation sera affichée pour le public sur votre page A Propos.</h2>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description, new { style = "width:100%; height:800px;" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <p>
+            <input class="green-button" type="submit" value="Enregistrer" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

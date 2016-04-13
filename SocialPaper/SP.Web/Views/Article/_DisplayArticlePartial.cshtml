@@ -1,0 +1,30 @@
+﻿@model SP.Web.Models.ArticleContent
+
+<div class="article">
+    @if (Model.isLink)
+    {
+        <h1 class="title">@Model.Title</h1>
+        <a href="@Model.LinkUrl" target="_blank">@Model.LinkUrl</a>
+    }
+    else
+    {
+        if(!string.IsNullOrEmpty(Model.File))
+        {
+            <div class="edit">
+                @using (Html.BeginForm("Download", "Article", FormMethod.Post))
+                {
+                    @Html.HiddenFor(model => model.File)
+                    <input class="download-button" type="submit" value="Télécharger le contenu associé" />
+                }
+            </div>
+        }
+        <h1 class="title">@Model.Title</h1>
+        if(!string.IsNullOrEmpty(Model.Video))
+        {
+            <div style="margin: 0 auto; width:560px">
+                <iframe width="560" height="315" src="@Model.Video" frameborder="0" allowfullscreen></iframe>
+            </div>
+        }
+        @MvcHtmlString.Create(Model.Content)
+    }
+</div>

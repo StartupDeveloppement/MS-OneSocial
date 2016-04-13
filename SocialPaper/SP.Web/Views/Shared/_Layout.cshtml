@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - One Social</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <script type="text/javascript" src="~/Scripts/tinymce/tinymce.js" ></script>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+    </head>
+    <body>
+        <header>
+            <div class="default has-subnav">
+			    <nav class="main fc row">
+                    <div class="p2-nav-content-width cf">
+				        <div class="site-header">
+                                <img alt="" src="">
+                                <span class="logo">@Html.ActionLink("One Social", "Index", "Home")</span>
+				        </div>
+                        <div class="fr">		
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+			    </nav>
+                @{ string regulateur = regulateur = "<div style=\"height: 82px;\"> </div>"; } 
+                @if (User.Identity.IsAuthenticated)
+                {
+                    regulateur = "<div style=\"height: 120px;\"> </div>";
+                    
+                    <nav class="sub fc row">
+                        <div class="p2-nav-content-width">
+                            <ul class="fc">
+                                @{string siteName = SP.Web.Context.UsersContext.GetUserSite(User.Identity.Name);}
+                                <li class="nav-item fl @if(ViewBag.Active as string == "List") { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink("Mon site", "List", "Article", new { sitename = siteName }, null)</li>
+                                @{List<string> categories = SP.Web.Context.ArticlesContext.GetUserCategories(User.Identity.Name);}
+                                @foreach (string item in categories)
+                                {
+                                    <li class="nav-item fl @if(ViewBag.Active as string == item) { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink(item, "Category", "Article", new { sitename = siteName, category = item }, null)</li>
+                                }
+                                <li class="nav-item fl @if(ViewBag.Active as string == "Manage") { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink("Mes Articles", "Manage", "Article", new { sitename = (string)null }, null)</li>
+                                @if (User.Identity.Name.Equals("waelharbi90@outlook.com", StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    <li class="nav-item fl"><a href="/Admin">Espace d'administration</a></li>
+                                }
+                                <li class="nav-item fl @if(ViewBag.Active as string == "About") { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink("A Propos...", "Index", "About", new { sitename = siteName }, null)</li>
+                            </ul>
+                        </div>
+                    </nav>
+                }
+                else
+                {
+                    if(null != ViewBag.SiteName)
+                    {
+                        regulateur = "<div style=\"height: 120px;\"> </div>";
+                        <nav class="sub fc row">
+                            <div class="p2-nav-content-width">
+                                <ul class="fc">
+                                    <li class="nav-item fl @if(ViewBag.Active as string == "List") { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink(ViewBag.UserName as string, "List", "Article", new { sitename = ViewBag.SiteName as string }, null)</li>
+                                    @{List<string> categories = SP.Web.Context.ArticlesContext.GetSiteCategories(ViewBag.SiteName);}
+                                    @foreach (string item in categories)
+                                    {
+                                        <li class="nav-item fl @if(ViewBag.Active as string == item) { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink(item, "Category", "Article", new { sitename = ViewBag.SiteName, category = item }, null)</li>
+                                    }
+                                    <li class="nav-item fl @if(ViewBag.Active as string == "About") { @Html.Raw("active") } else{ @Html.Raw(string.Empty); }">@Html.ActionLink("A Propos...", "Index", "About", new { sitename = ViewBag.SiteName as string }, null)</li>
+                                </ul>
+                            </div>
+                        </nav>
+                    }
+                }
+                <img class="section-shadow section-shadow-nav" src="/Images/Surface/shadow_nav.png?v=31189">
+                   
+	        </div>        
+        </header>
+        @Html.Raw(regulateur)
+        <div class="p2-page">
+            @RenderSection("featured", required: false)
+            @RenderSection("panel", required: false)
+            <div class="p2-eb-theme-bg-white">
+                <div class="p2-content-width">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            @Html.Partial("_FooterPartial")
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

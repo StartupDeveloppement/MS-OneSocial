@@ -1,0 +1,62 @@
+﻿@model List<SP.Web.Models.ArticleIndex>
+@{
+    ViewBag.Title = "Mes Articles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/article")
+}
+
+@Html.ActionLink("Rédiger un nouvel article", "Create", "Article") | 
+@Html.ActionLink("Associer un article d'un autre site", "CreateLink", "Article")
+<br />
+<br clear="all" />
+@{
+    if (Model.Count > 0)
+    {
+        foreach (SP.Web.Models.ArticleIndex item in Model)
+        {
+            <div class="article">
+                <div class="edit">
+                    <ul>
+                        <li>Date de création : @item.Creation.ToShortDateString()</li>
+                        @if(item.isLink)
+                        {
+                            <li>@Html.ActionLink("Modifier", "EditLink", new { id = item.Id })</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Modifier", "Edit", new { id = item.Id })</li>
+                        }
+                        <li>@Html.ActionLink("Supprimer", "Delete", new { id = item.Id }, new { onclick = "return confirm('Etes vous sûr de vouloir supprimer cet article ?');" })</li>
+                        <li>@Html.ActionLink("Publier", "Publish", new { id = item.Id })</li>
+                        <li><b>@item.isPublish</b></li>
+                    </ul>
+                </div>
+                <h2 class="title">
+                    @if(item.isLink)
+                    {
+                        @Html.ActionLink(item.Title, "EditLink", new { id = item.Id })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(item.Title, "Edit", new { id = item.Id })
+                    }
+                </h2>
+                <p class="date">
+                    <span class="day">@item.Creation.Day</span>
+                    @{
+                        System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.GetCultureInfo("fr-FR");
+                    }
+                    <span class="month">@item.Creation.ToString("MMM", culture)</span>
+                </p>
+                <p>
+                    @MvcHtmlString.Create(item.Abstract)
+                </p>
+            </div>
+        }
+    }
+    else
+    { 
+    <h2>
+        Aucun article n'a été enregistré pour le moment.</h2>
+    }
+}

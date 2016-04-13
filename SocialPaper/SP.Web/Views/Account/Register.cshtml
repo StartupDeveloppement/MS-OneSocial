@@ -1,0 +1,63 @@
+﻿@model SP.Web.Models.RegisterModel
+@{
+    ViewBag.Title = "Inscription";
+}
+
+@section featured {
+    <div class="p2-eb-theme-bg-blue">
+        <div class="p2-content-width">
+            <h1>@ViewBag.Title.</h1>
+            <h2>Créer votre compte personnel.</h2>
+            <p>
+                L'inscription ne vous prendra que quelques secondes et elle est totalement gratuite.
+            </p>
+        </div>
+    </div>
+}
+<div class="formulaire">
+    Si vous êtes déjà inscrit, @Html.ActionLink("connectez-vous", "LogIn", "Account")
+    <br />
+    <br clear="all" />
+    <div class="bloc formulaire-connexion">
+        <table>
+            <tr>
+                <td>
+                    @using (Html.BeginForm()) {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <ol>
+                            <li>
+                                @Html.LabelFor(m => m.UserName)
+                                @Html.TextBoxFor(m => m.UserName)
+                                @Html.DescriptionFor(m => m.UserName)
+                            </li>
+                            <li>
+                                @Html.LabelFor(m => m.Email)
+                                @Html.TextBoxFor(m => m.Email)
+                                @Html.DescriptionFor(m => m.Email)
+                            </li>
+                            <li>
+                                @Html.LabelFor(m => m.Password)
+                                @Html.PasswordFor(m => m.Password)
+                            </li>
+                            <li>
+                                @Html.LabelFor(m => m.ConfirmPassword)
+                                @Html.PasswordFor(m => m.ConfirmPassword)
+                            </li>
+                        </ol>
+                        <input class="green-button" type="submit" value="Inscription" />
+                    </fieldset>
+                }
+                </td>
+                <td>
+                    @Html.Image("/Images/socialpaper-couverture.png", "one social",355, 200)
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

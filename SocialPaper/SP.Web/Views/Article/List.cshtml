@@ -1,0 +1,63 @@
+﻿@model List<SP.Web.Models.ArticleIndex>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/css/article")
+
+}
+
+<div id="content">
+    @{
+        if (Model.Count > 0)
+        {
+        @Html.Partial("_ListArticlePartial", Model)
+        
+        }
+        else
+        { 
+        <h2>Aucun article n'a été enregistré pour le moment.</h2>
+        }
+    }
+</div>
+<div id="loadButton" class="loadButton">
+    
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var defaultBtnText = "";
+        var buttonLoadingText = "<img src='../Images/ajax-loader.gif' alt='' />";
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height() && isEmpty($("#loadButton"))) {
+
+                loadMore();
+            }
+        });
+
+        $("#loadButton").click(function () {
+            loadMore();
+        });
+        function isEmpty(el) {
+            return !$.trim(el.html())
+        }
+        function loadMore() {
+            var id = $(".article").length;
+            if (id == "0" || id % 10 > 0 || id == undefined)
+                return;
+            else
+                id = id / 10;
+            $("#loadButton").html(buttonLoadingText);
+
+            $.ajax({
+                type: 'POST',
+                url: '/Article/GetNextContent',
+                data: { lastID: id, siteName: "@(ViewBag.SiteName)" }
+            }).done(function (result) {
+                $('#content').append(result);
+                $("#loadButton").html(defaultBtnText);
+            })
+                  .fail(function (result) {
+                      $("#loadButton").html(defaultBtnText);
+                  });
+        }
+    });
+</script>
